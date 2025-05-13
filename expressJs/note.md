@@ -15,7 +15,7 @@
     - in app.post(), we need to call res method (eg: res.json({})) otherwise if you don't send a response, the client request will hang waiting for a response and It isn’t that POST handlers uniquely require a response—every route handler in Express (GET, POST, PUT, DELETE, etc.) must either:
         - Send a response (via res.send(), res.json(), res.end(), res.render(), etc.),
         - or call next() so that some later middleware will send one.
-        - [image-ex](/learnings/expressJs/images/ss1.png)
+        - [image-ex](/expressJs/images/ss1.png)
 
 ### Basic Route Structure -
 - Every route follows the same pattern: app.METHOD(PATH, HANDLER). Here, METHOD is the HTTP verb (get, post, put, delete), PATH is the URL endpoint, and HANDLER is the function that executes when the route is matched.
@@ -61,4 +61,4 @@
 
 ### More to it -
 - [code visulize](https://claude.ai/public/artifacts/72bb48e7-b628-4f12-9303-e16adef8e5f0)
-- [http-client-info](/learnings/expressJs/http-client-info.md)
+- [http-client-info](/expressJs/http-client-info.md)
