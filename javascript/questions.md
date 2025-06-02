@@ -14,7 +14,8 @@ When a JavaScript program runs, a global execution context is created. This cont
 
 **What is Hoisting?**  
 Hoisting is not about physically moving code to the top, but rather about how JavaScript allocates memory for variables and functions during the memory creation phase of the execution context.
-
+Hoisting is a concept which enables us to extract values of variables and functions even before initialising/assigning value without getting error and this is happening due to the 1st phase (memory creation phase) of the Execution Context.
+ 
 **Key Behaviors**
 - This mechanism allows for certain behaviors like using functions before they appear in the code, but it's crucial to understand that variables are initialized as `undefined` until they're assigned a value during code execution.
 - **Function declarations:** You can call a function before its declaration in the code because the entire function is available in memory from the start.
@@ -57,3 +58,25 @@ This approach minimizes the TDZ nearly to zero.
 
 **Technical Note**  
 JavaScript uses different memory than the global execution context to store `let` and `const`, which is the reason behind the "temporal dead zone".
+
+
+#### Q. Shortest JS Program, window & this keyword
+
+- The shortest JS program is empty file. Because even then, JS engine does a lot of things. As always, even in this case, it creates the GEC which has memory space and the execution context.
+
+- JS engine creates something known as '**window**'. It is an object, which is created in the global space. It contains lots of functions and variables. These functions and variables can be accessed from anywhere in the program. JS engine also creates a **this** keyword, which points to the **window object** at the global level. So, in summary, along with GEC, a global object (window) and a this variable are created.
+
+- In different engines, the name of global object changes. Window in browsers, but in nodeJS it is called something else. At global level, this === window
+
+- If we create any variable in the global scope, then the variables get attached to the global object.
+
+eg:
+
+```js
+var x = 10;
+console.log(x); // 10
+console.log(this.x); // 10
+console.log(window.x); // 10
+```
+
+<hr>
