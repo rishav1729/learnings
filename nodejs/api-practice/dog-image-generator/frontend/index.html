@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dog Image Generator</title>
+  </head>
+  <body>
+    <h1>🐶 Random Dog Image</h1>
+    <button onclick="getDog()">Get New Dog</button>
+    <br><br>
+    <img id="dogImage" src="" width="300" alt="Dog Image" />
+    <script>
+      async function getDog() {
+        const res = await fetch("http://localhost:3000/api/dog");
+        const data = await res.json();
+        document.getElementById("dogImage").src = data.imageUrl;
+      }
+
+      window.onload = getDog;
+    </script>
+  </body>
+</html>
